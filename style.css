@@ -194,3 +194,28 @@ body {
 .cta:hover .ctaImg{
   content: url("./images/buy_pumpfun_hover.png");
 }
+
+/* ===== Animations ===== */
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.35)); transform: translateY(0); }
+  50% { filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.65)); transform: translateY(-2px); }
+}
+
+.coin img {
+  animation: glow 3.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* クリックできる感を出す */
+.buy-btn img {
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+/* ホバー時は少し強め（PC用） */
+.buy-btn img:hover {
+  transform: scale(1.08);
+}
