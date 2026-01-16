@@ -51,3 +51,37 @@ body {
   width: 50px;
   margin: 10px;
 }
+
+/* ===== Buy button (main) ===== */
+.buy-btn{
+  display: block;
+  position: relative;
+  margin: 18px auto 10px;
+  width: min(520px, 92vw); /* ←大きすぎるならここを 460px などに */
+  z-index: 50;             /* ←これで他の画像に隠れにくい */
+}
+
+.buy-btn img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 通常画像は常に表示 */
+.buy-btn .buy-normal{
+  opacity: 1;
+}
+
+/* hover画像は重ねて、hover時だけ出す */
+.buy-btn .buy-hover{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .18s ease;
+  pointer-events: none;
+}
+
+.buy-btn:hover .buy-hover{
+  opacity: 1;
+}
+
