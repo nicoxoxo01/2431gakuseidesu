@@ -46,21 +46,22 @@ body{
 
 /* タイトル画像（コインのすぐ近くに） */
 .title-img{
-  width: min(520px, 92vw);
+  width: min(360px, 78vw); /* ←小さく */
   height: auto;
   display:block;
-  margin-top: -6px; /* コインに寄せる */
+  margin-top: -26px;       /* ←コインに近づける（もっと近づけたいなら -32px くらいまで） */
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
 }
+
 
 /* 画像ボタン */
 .cta-row{
   display:flex;
-  gap: 12px;
+  gap: 10px;
   align-items:center;
   justify-content:center;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 2px;
 }
 
 .img-btn{
@@ -74,8 +75,8 @@ body{
 }
 
 .img-btn img{
-  width: min(320px, 86vw);
-  max-width: 340px;
+  width: min(260px, 72vw); /* ←小さく */
+  max-width: 280px;        /* ←上限も下げる */
   height: auto;
   display:block;
 }
@@ -289,3 +290,9 @@ body{
     flex: 1;
   }
 }
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
