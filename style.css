@@ -194,6 +194,7 @@ img{ max-width: 100%; height: auto; }
   cursor:pointer;
   transition: transform .12s ease, background .12s ease;
   font-weight: 700;
+  align-self: flex-start;
 }
 
 .copy-btn:hover{
