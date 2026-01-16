@@ -15,6 +15,8 @@ body{
   background: #05040b url("images/background.png") center/cover fixed no-repeat;
 }
 
+img{ max-width: 100%; height: auto; }
+
 .page{
   width: min(980px, 92vw);
   margin: 0 auto;
@@ -44,17 +46,16 @@ body{
   filter: drop-shadow(0 18px 34px rgba(0,0,0,.6));
 }
 
-/* タイトル画像（コインのすぐ近くに） */
+/* タイトル画像 */
 .title-img{
-  width: min(360px, 78vw); /* ←小さく */
+  width: min(360px, 78vw);
   height: auto;
   display:block;
-  margin-top: -40px;       /* ←コインに近づける（もっと近づけたいなら -32px くらいまで） */
+  margin-top: -26px;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
 }
 
-
-/* 画像ボタン */
+/* CTA（画像ボタン） */
 .cta-row{
   display:flex;
   gap: 10px;
@@ -75,8 +76,8 @@ body{
 }
 
 .img-btn img{
-  width: min(260px, 72vw); /* ←小さく */
-  max-width: 280px;        /* ←上限も下げる */
+  width: min(260px, 72vw);
+  max-width: 280px;
   height: auto;
   display:block;
 }
@@ -156,6 +157,28 @@ body{
   font-size: 13px;
 }
 
+/* Copied表示（Copyボタンの左隣） */
+.copy-hint{
+  font-size: 13px;
+  color: rgba(255,255,255,.82);
+  white-space: nowrap;
+  margin-left: 4px;
+  margin-right: 8px;
+  min-width: 72px; /* 表示のガタつき防止（任意） */
+}
+
+/* アニメーション（ふわっと表示して消える） */
+.copy-hint.show{
+  animation: popFade 1.2s ease forwards;
+}
+
+@keyframes popFade{
+  0%   { opacity: 0; transform: translateY(2px) scale(.98); }
+  20%  { opacity: 1; transform: translateY(0) scale(1); }
+  80%  { opacity: 1; transform: translateY(-2px) scale(1); }
+  100% { opacity: 0; transform: translateY(-6px) scale(1); }
+}
+
 .copy-btn{
   display:inline-flex;
   align-items:center;
@@ -175,16 +198,7 @@ body{
   background: rgba(255,255,255,.16);
 }
 
-.hint{
-  margin: 6px 0 0;
-  min-height: 18px;
-  font-size: 13px;
-  color: rgba(255,255,255,.78);
-  text-align:center;
-}
-
-/* HOW TO BUY
-   画像の四角い囲いを消す（背景/枠/丸角なし） */
+/* HOW TO BUY（アイコンの四角い囲いを消す） */
 .steps{
   list-style: none;
   padding: 0;
@@ -212,7 +226,6 @@ body{
   justify-content:center;
   flex: 0 0 auto;
 
-  /* 囲いを完全に消す */
   background: transparent;
   border: none;
   border-radius: 0;
@@ -220,7 +233,7 @@ body{
 }
 
 .step-icon img{
-  width: 64px;   /* 大きくして見やすく */
+  width: 64px;
   height: 64px;
   display:block;
   filter: drop-shadow(0 8px 16px rgba(0,0,0,.35));
@@ -236,8 +249,7 @@ body{
   color: var(--muted);
 }
 
-/* COMMUNITY
-   丸い囲いを消して画像だけ */
+/* COMMUNITY（丸い囲いを消して画像だけ） */
 .socials{
   display:flex;
   justify-content:center;
@@ -252,7 +264,6 @@ body{
   text-decoration:none;
   cursor:pointer;
 
-  /* 囲い削除 */
   width: auto;
   height: auto;
   border: none;
@@ -290,9 +301,3 @@ body{
     flex: 1;
   }
 }
-
-img{
-  max-width: 100%;
-  height: auto;
-}
-
