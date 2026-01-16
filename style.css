@@ -1,253 +1,200 @@
-:root{
-  --max: 420px;
-  --glass: rgba(0,0,0,.55);
-  --line: rgba(255,255,255,.10);
-  --text: rgba(255,255,255,.92);
-}
-
-*{ box-sizing:border-box; }
-body {
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
   margin: 0;
-  font-family: sans-serif;
-  color: white;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+  color: #fff;
   text-align: center;
 
+  /* 宇宙背景 */
   background:
-    radial-gradient(circle at top, rgba(255,215,0,0.15), rgba(0,0,0,0.9)),
+    radial-gradient(circle at top, rgba(255,215,0,.12), rgba(0,0,0,.88)),
     url("images/background.png") center / cover no-repeat fixed;
 }
 
-.wrap{
-  min-height:100dvh;
-  background-image:
-    radial-gradient(circle at 50% 10%, rgba(255,208,64,.18), rgba(0,0,0,.65) 55%),
-    var(--bg);
-  background-size: cover;
-  background-position: center;
-  padding: 18px 14px 28px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+/* 画面幅の中央にまとめる */
+.container{
+  width: min(520px, 92vw);
+  margin: 0 auto;
+  padding: 28px 0 120px; /* 下固定ボタンの余白 */
 }
 
-.hero{
-  width:min(var(--max), 100%);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap: 14px;
-  margin-top: 6px;
+/* ===== Hero ===== */
+.coin{
+  margin-top: 18px;
 }
-
-.coin img {
-  width: 90%;
-  max-width: 380px;
-  margin: 40px auto 20px;
+.coin img{
+  width: 92%;
+  max-width: 420px;
+  height: auto;
   display: block;
-}
-
-.cta{
-  display:inline-block;
-  width: min(360px, 92vw);
-}
-.ctaImg{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius: 16px;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,.55));
-  transition: transform .15s ease, filter .15s ease;
-}
-.cta:hover .ctaImg{
-  transform: translateY(-1px) scale(1.01);
-  filter: drop-shadow(0 14px 28px rgba(0,0,0,.62));
-}
-
-.card{
-  width:min(var(--max), 100%);
-  margin-top: 14px;
-  padding: 14px 14px 16px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--glass);
-  backdrop-filter: blur(6px);
-}
-
-.title{
-  margin: 0 0 10px;
-  text-align:center;
-  font-size: 18px;
-  letter-spacing:.04em;
-}
-
-.kv .row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 10px;
-  padding: 8px 0;
-  border-top: 1px solid rgba(255,255,255,.07);
-}
-.kv .row:first-of-type{ border-top:none; }
-
-.k{ opacity:.78; font-size: 13px; }
-.v{ font-weight:600; }
-
-.caBox{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  flex: 1;
-  justify-content:flex-end;
-}
-#ca{
-  font-size: 12px;
-  padding: 6px 8px;
-  border-radius: 10px;
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.10);
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  max-width: 62vw;
-}
-
-.copyBtn{
-  display:flex;
-  align-items:center;
-  gap: 6px;
-  padding: 8px 10px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: var(--text);
-  cursor:pointer;
-}
-.copyBtn img{ width:18px; height:18px; }
-
-.tagline{
-  margin: 12px 0 0;
-  text-align:center;
-  opacity:.9;
-}
-
-.steps{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  align-items:center;
-}
-.step{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.22);
-}
-.step img{ width:46px; height:46px; }
-.step p{ margin:0; font-size: 14px; }
-.arrow{
-  text-align:center;
-  opacity:.8;
-  font-size: 18px;
-}
-
-.links{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.iconBtn{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap: 6px;
-  padding: 10px 8px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.22);
-  text-decoration:none;
-  color: var(--text);
-}
-.iconBtn img{ width:44px; height:44px; }
-.iconBtn span{ font-size: 12px; opacity:.9; }
-
-.foot{
-  width:min(var(--max), 100%);
-  margin-top: 14px;
-  opacity:.7;
-  text-align:center;
-  font-size: 12px;
-}
-
-.buy-btn img {
-  width: 60%;
-  max-width: 220px;
-  margin: 30px auto;
-  display: block;
-}
-
-/* CTA hover画像差し替え */
-.cta:hover .ctaImg{
-  content: url("./images/buy_pumpfun_hover.png");
-}
-
-/* ===== Animations ===== */
-@keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.35)); transform: translateY(0); }
-  50% { filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.65)); transform: translateY(-2px); }
-}
-
-.coin img {
+  margin: 0 auto;
   animation: glow 3.5s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
+@keyframes glow{
+  0%,100%{
+    filter: drop-shadow(0 0 6px rgba(255,215,0,.35));
+    transform: translateY(0);
+  }
+  50%{
+    filter: drop-shadow(0 0 18px rgba(255,215,0,.65));
+    transform: translateY(-2px);
+  }
 }
 
-/* クリックできる感を出す */
-.buy-btn img {
+/* ===== Buy Button (top) ===== */
+.buy-btn{
+  display: inline-block;
+  margin: 18px auto 8px;
+}
+.buy-btn img{
+  width: min(78vw, 320px);
+  height: auto;
+  display: block;
   animation: pulse 2.2s ease-in-out infinite;
 }
 
-/* ホバー時は少し強め（PC用） */
-.buy-btn img:hover {
-  transform: scale(1.08);
+@keyframes pulse{
+  0%,100%{ transform: scale(1); }
+  50%{ transform: scale(1.04); }
 }
 
-/* ===== Mobile Fixed Buy Button ===== */
-.buy-fixed {
+.buy-btn img:hover{
+  transform: scale(1.07);
+}
+
+/* hover画像差し替え（PC向け） */
+.buy-btn img:hover{
+  content: url("images/buy_pumpfun_hover.png");
+}
+
+/* ===== Cards ===== */
+.card{
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 16px 14px;
+  margin: 14px auto;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
+.card h2{
+  margin: 0 0 12px;
+  font-size: 18px;
+  letter-spacing: .4px;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 6px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  font-size: 13px;
+}
+.row:first-of-type{ border-top: none; }
+.label{ opacity: .7; text-align: left; }
+.value{ font-weight: 700; text-align: right; }
+
+/* CA表示 + copy */
+.ca-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 6px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.ca{
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 290px;
+  opacity: .95;
+}
+.copy-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.35);
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+}
+.copy-btn img{
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ===== How to Buy ===== */
+.steps{
+  display: grid;
+  gap: 10px;
+}
+.step{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 12px 12px;
+  text-align: left;
+}
+.step img{
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+}
+.step span{
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ===== Community ===== */
+.icons{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+.icons a img{
+  width: 56px;
+  height: 56px;
+  display: block;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+  transition: transform .15s ease;
+}
+.icons a:hover img{ transform: scale(1.06); }
+
+/* ===== Mobile fixed Buy ===== */
+.buy-fixed{
   position: fixed;
   left: 50%;
   bottom: 14px;
   transform: translateX(-50%);
   z-index: 999;
-  display: none; /* PCでは非表示 */
-  width: min(92vw, 420px);
+  width: min(92vw, 460px);
+  display: block;
 }
-
-.buy-fixed img {
+.buy-fixed img{
   width: 100%;
   height: auto;
   display: block;
   border-radius: 14px;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.55));
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
   animation: pulse 2.2s ease-in-out infinite;
 }
-
-/* スマホでだけ表示 */
-@media (max-width: 768px) {
-  .buy-fixed { display: block; }
-  body { padding-bottom: 110px; } /* 固定ボタンに被らない余白 */
-}
-
-.buy-btn img:hover,
-.buy-fixed img:active {
+.buy-fixed img:active{
   content: url("images/buy_pumpfun_hover.png");
 }
-
