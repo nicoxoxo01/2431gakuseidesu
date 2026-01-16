@@ -156,20 +156,15 @@ body{
 .copy-btn{
   display:inline-flex;
   align-items:center;
-  gap: 8px;
+  justify-content:center;
   border: 1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.10);
   color: var(--text);
   border-radius: 12px;
-  padding: 8px 10px;
+  padding: 8px 12px;
   cursor:pointer;
   transition: transform .12s ease, background .12s ease;
-}
-
-.copy-btn img{
-  width: 18px;
-  height: 18px;
-  display:block;
+  font-weight: 700;
 }
 
 .copy-btn:hover{
@@ -221,6 +216,13 @@ body{
   width: 34px;
   height: 34px;
   display:block;
+}
+
+/* 2番のアイコンを画像なし文字で表現 */
+.step-icon-text{
+  font-weight: 900;
+  letter-spacing: .5px;
+  color: rgba(255,255,255,.88);
 }
 
 .step-title{
