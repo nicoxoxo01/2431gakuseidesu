@@ -13,17 +13,30 @@
     <!-- HERO -->
     <header class="hero">
       <div class="coin-wrap">
-        <!-- coin_main.png が無いので coin.png を使う -->
         <img class="coin" src="images/coin.png" alt="2431GAKUSEIDESU coin" />
       </div>
 
-      <!-- Buy button -->
-      <a class="buy-btn" href="https://join.pump.fun/HSag/4drhm9bt" target="_blank" rel="noopener">
-        <span class="buy-btn-inner">
-          <img class="buy-icon" src="images/icon_pumpfun.png" alt="" />
-          <span class="buy-text">Buy on Pump.fun</span>
-        </span>
-      </a>
+      <!-- 文字を画像でインパクト表示（コインのすぐ下） -->
+      <img class="title-img" src="images/2431gakuseidesu.png" alt="2431GAKUSEIDESU" />
+
+      <!-- CTA Buttons (画像ボタンでリンク) -->
+      <div class="cta-row">
+        <!-- Pump.fun -->
+        <a class="img-btn"
+           href="https://join.pump.fun/HSag/4drhm9bt"
+           target="_blank" rel="noopener"
+           aria-label="Buy on Pump.fun">
+          <img src="images/buy_pumpfun_hover.png" alt="Buy on Pump.fun" />
+        </a>
+
+        <!-- Phantom (tokenページ) -->
+        <a class="img-btn"
+           href="https://phantom.com/tokens/solana/9msnoqekR1pq67xim44WdiZDJHcnoy6Xg4BK2msSpump?referralId=4l357ssmzbe"
+           target="_blank" rel="noopener"
+           aria-label="Open in Phantom">
+          <img src="images/buy_phantom_hover.png" alt="Open in Phantom" />
+        </a>
+      </div>
     </header>
 
     <!-- ABOUT -->
@@ -51,7 +64,7 @@
           <div class="value ca">
             <code id="caText">9msnoqekR1pq67xim44WdiZDJHcnoy6Xg4BK2msSpump</code>
 
-            <!-- 画像なし、文字だけのCopyボタン -->
+            <!-- CAコピー：画像なしでOK（Copy文字だけ） -->
             <button class="copy-btn" id="copyBtn" type="button" aria-label="Copy contract address">
               Copy
             </button>
@@ -78,8 +91,10 @@
         </li>
 
         <li class="step">
-          <!-- icon_copyca.png が無いので、アイコンは表示しない（文字だけ） -->
-          <div class="step-icon step-icon-text">CA</div>
+          <!-- ここで icon_copyca.png を使用 -->
+          <div class="step-icon">
+            <img src="images/icon_copyca.png" alt="Copy CA" />
+          </div>
           <div class="step-text">
             <div class="step-title">2. Paste Contract Address</div>
             <div class="step-sub">Copy CA and paste in Phantom</div>
@@ -102,16 +117,19 @@
     <section class="card">
       <h2 class="section-title">Join the Community</h2>
 
+      <!-- 丸い囲いを消して、画像だけ表示 -->
       <div class="socials">
         <a class="social"
            href="https://x.com/2431kobuseidesu?s=21&t=leZ_uma8GZmxIWh4jNC-mg"
-           target="_blank" rel="noopener">
+           target="_blank" rel="noopener"
+           aria-label="X">
           <img src="images/icon_x.png" alt="X" />
         </a>
 
         <a class="social"
            href="https://x.com/i/communities/2011371751469638008"
-           target="_blank" rel="noopener">
+           target="_blank" rel="noopener"
+           aria-label="Community">
           <img src="images/icon_community.png" alt="Community" />
         </a>
       </div>
