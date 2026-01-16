@@ -7,10 +7,17 @@ body {
   color: white;
 }
 
-.coin img {
-  width: 80%;
-  max-width: 320px;
-  margin-top: 30px;
+.coin{
+  width: min(420px, 80vw); /* ←コイン大きく：420〜520くらいで調整 */
+  margin: 26px auto 8px;
+  position: relative;
+  z-index: 20;
+}
+
+.coin img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .buy-btn img {
