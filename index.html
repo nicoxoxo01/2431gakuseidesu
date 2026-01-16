@@ -2,130 +2,105 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2431GAKUSEIDESU</title>
-  <meta name="description" content="2431GAKUSEIDESU / 24歳、学生です - Solana meme coin" />
-  <style>
-    :root { --bg:#0b0b12; --card:#141425; --text:#f5f5ff; --muted:#b7b7c9; --accent:#f0c24b; }
-    * { box-sizing:border-box; }
-    body {
-      margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
-      background: radial-gradient(1200px 600px at 50% -10%, #1c1c3a 0%, var(--bg) 55%);
-      color: var(--text);
-    }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 28px 18px 60px; }
-    .card { background: rgba(20,20,37,.88); border:1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 22px; }
-    .hero { display:flex; gap: 18px; align-items:center; flex-wrap:wrap; }
-    .icon {
-      width: 130px; height: 130px; border-radius: 24px;
-      background: #000; display:grid; place-items:center;
-      border: 1px solid rgba(255,255,255,.12);
-      overflow:hidden;
-    }
-    .icon img { width:100%; height:100%; object-fit:cover; }
-    h1 { margin:0; font-size: 32px; letter-spacing:.5px; }
-    .tag { margin-top:6px; color: var(--muted); }
-    .btns { display:flex; gap: 10px; flex-wrap:wrap; margin-top: 14px; }
-    a.btn {
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 10px 14px; border-radius: 12px; text-decoration:none;
-      background: rgba(240,194,75,.12);
-      border: 1px solid rgba(240,194,75,.35);
-      color: var(--text); font-weight: 700;
-    }
-    a.btn:hover { background: rgba(240,194,75,.18); }
-    .grid { display:grid; gap: 14px; margin-top: 14px; }
-    @media (min-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
-    .box { background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 16px; }
-    .box h2 { margin:0 0 8px; font-size: 16px; color: var(--accent); }
-    .mono {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.10);
-      padding: 10px 12px; border-radius: 12px; overflow:auto; color:#fff;
-      word-break: break-all;
-    }
-    .small { color: var(--muted); font-size: 13px; line-height:1.6; }
-    footer { margin-top: 16px; text-align:center; color: var(--muted); font-size: 12px; }
-    .copyrow { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-    button.copy {
-      padding: 10px 12px; border-radius: 12px; cursor:pointer;
-      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
-      color: var(--text); font-weight:700;
-    }
-  </style>
+  <meta name="description" content="2431GAKUSEIDESU / 24歳、学生。Solana meme coin." />
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="hero">
-        <div class="icon">
-          <img src="icon.jpg" alt="coin icon">
+  <main class="wrap" style="--bg:url('./images/bg_space.jpg')">
+    <!-- HERO -->
+    <section class="hero">
+      <img class="coin" src="./images/coin_main.png" alt="2431GAKUSEIDESU coin" />
+
+      <a class="cta" href="https://join.pump.fun/HSag/4drhm9bt" target="_blank" rel="noopener">
+        <img class="ctaImg" src="./images/buy_pumpfun.png" alt="Buy on Pump.fun" />
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="card">
+      <h2 class="title">About</h2>
+
+      <div class="kv">
+        <div class="row">
+          <span class="k">Token Name</span>
+          <span class="v">$2431GAKUSEIDESU</span>
         </div>
-        <div>
-          <h1>2431GAKUSEIDESU</h1>
-          <div class="tag">24歳、学生です。</div>
-          <div class="btns">
-            <!-- TODO: Pump.funリンクが分かったら下の PUMPFUN_LINK_HERE を差し替え -->
-            <a class="btn" href="PUMPFUN_LINK_HERE" target="_blank" rel="noopener">Pump.fun</a>
 
-            <a class="btn" href="https://x.com/2431kobuseidesu?s=21&t=leZ_uma8GZmxIWh4jNC-mg" target="_blank" rel="noopener">X</a>
+        <div class="row">
+          <span class="k">Chain</span>
+          <span class="v">Solana</span>
+        </div>
 
-            <a class="btn" href="https://x.com/i/communities/2011371751469638008" target="_blank" rel="noopener">Community</a>
+        <div class="row">
+          <span class="k">CA</span>
+          <div class="caBox">
+            <code id="ca">9msnoqekR1pq67xim44WdiZDJHcnoy6Xg4BK2msSpump</code>
+            <button id="copyBtn" class="copyBtn" type="button" aria-label="Copy CA">
+              <img src="./images/icon_copyca.png" alt="" />
+              <span>Copy</span>
+            </button>
           </div>
         </div>
+
+        <p class="tagline">2431GAKUSEIDESU / 24歳、学生</p>
       </div>
+    </section>
 
-      <div class="grid">
-        <div class="box">
-          <h2>Contract Address (CA)</h2>
-          <div class="copyrow">
-            <div id="ca" class="mono">9msnoqekR1pq67xim44WdiZDJHcnoy6Xg4BK2msSpump</div>
-            <button class="copy" onclick="copyCA()">Copy</button>
-          </div>
-          <p class="small">※偽CA対策：固定投稿とこのページのCAだけを正にしてな。</p>
+    <!-- HOW TO BUY -->
+    <section class="card">
+      <h2 class="title">How to Buy</h2>
+
+      <div class="steps">
+        <div class="step">
+          <img src="./images/icon_phantom.png" alt="Phantom" />
+          <p><b>1.</b> Get Phantom Wallet</p>
         </div>
 
-        <div class="box">
-          <h2>About</h2>
-          <p class="small">
-            2431GAKUSEIDESU（24歳、学生です）<br/>
-            ノリでいくSolanaミーム。盛り上がったら勝ち。
-          </p>
+        <div class="arrow">→</div>
+
+        <div class="step">
+          <img src="./images/icon_copyca.png" alt="Copy CA" />
+          <p><b>2.</b> Paste Contract Address</p>
         </div>
 
-        <div class="box">
-          <h2>How to buy</h2>
-          <ol class="small">
-            <li>Phantom などのウォレットを用意</li>
-            <li>SOL を入金</li>
-            <li>Pump.fun のリンクを開く</li>
-            <li>CA を確認して Buy</li>
-          </ol>
-        </div>
+        <div class="arrow">→</div>
 
-        <div class="box">
-          <h2>Rules</h2>
-          <p class="small">
-            DYOR / NFA（自己判断）<br/>
-            公式リンク以外は踏まない・CA以外は買わない。
-          </p>
+        <div class="step">
+          <img src="./images/icon_swap.png" alt="Swap" />
+          <p><b>3.</b> Swap</p>
         </div>
       </div>
+    </section>
 
-      <footer>© <span id="year"></span> 2431GAKUSEIDESU</footer>
-    </div>
-  </div>
+    <!-- COMMUNITY -->
+    <section class="card">
+      <h2 class="title">Join the Community</h2>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+      <div class="links">
+        <a class="iconBtn" href="https://x.com/2431kobuseidesu?s=21&t=leZ_uma8GZmxIWh4jNC-mg" target="_blank" rel="noopener">
+          <img src="./images/icon_x.png" alt="X" />
+          <span>X</span>
+        </a>
 
-    function copyCA(){
-      const ca = document.getElementById("ca").innerText.trim();
-      navigator.clipboard.writeText(ca).then(() => {
-        alert("CA copied!");
-      });
-    }
-  </script>
+        <a class="iconBtn" href="https://x.com/i/communities/2011371751469638008" target="_blank" rel="noopener">
+          <img src="./images/icon_community.png" alt="X Community" />
+          <span>Community</span>
+        </a>
+
+        <a class="iconBtn" href="https://join.pump.fun/HSag/4drhm9bt" target="_blank" rel="noopener">
+          <img src="./images/icon_pumpfun.png" alt="Pump.fun" />
+          <span>Pump.fun</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>This is a meme coin with no intrinsic value. Official links only.</p>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
