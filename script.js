@@ -16,7 +16,6 @@ copyBtn?.addEventListener("click", async () => {
     await navigator.clipboard.writeText(text);
     showHint("Copied ✅");
   } catch (e) {
-    // iOS/Safari等のフォールバック
     const ta = document.createElement("textarea");
     ta.value = text;
     ta.style.position = "fixed";
