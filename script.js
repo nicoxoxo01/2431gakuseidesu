@@ -2,10 +2,14 @@ const caTextEl = document.getElementById("caText");
 const copyBtn = document.getElementById("copyBtn");
 const hint = document.getElementById("copyHint");
 
-function showHint(msg) {
+function flashHint(msg) {
   hint.textContent = msg;
-  clearTimeout(showHint._t);
-  showHint._t = setTimeout(() => (hint.textContent = ""), 1800);
+
+  // アニメを毎回発火させるために付け直す
+  hint.classList.remove("show");
+  // reflow
+  void hint.offsetWidth;
+  hint.classList.add("show");
 }
 
 copyBtn?.addEventListener("click", async () => {
@@ -14,7 +18,7 @@ copyBtn?.addEventListener("click", async () => {
 
   try {
     await navigator.clipboard.writeText(text);
-    showHint("Copied ✅");
+    flashHint("Copied ✅");
   } catch (e) {
     // iOS/Safari等フォールバック
     const ta = document.createElement("textarea");
@@ -26,6 +30,6 @@ copyBtn?.addEventListener("click", async () => {
     ta.select();
     const ok = document.execCommand("copy");
     document.body.removeChild(ta);
-    showHint(ok ? "Copied ✅" : "Copy failed ❌");
+    flashHint(ok ? "Copied ✅" : "Copy failed ❌");
   }
 });
